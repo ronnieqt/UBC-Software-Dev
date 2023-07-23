@@ -38,19 +38,19 @@ public class Library {
     // MODIFIES: this
     // EFFECTS: stores the given Book bk into the appropriate container within this class
     public void storeBook(Book bk) {
-       BookType genre = bk.getType();
+        BookType genre = bk.getType();
 
-       if (genre.equals(REFERENCE)) {
-           referenceBooks.add(bk);
-       } else if (genre.equals(NONFICTION)) {
-           nonfictionBooks.add(bk);
-       } else if (genre.equals(FICTION)) {
-           fictionBooks.add(bk);
-       } else if (genre.equals(TEXTBOOK)) {
-           textBooks.add(bk);
-       } else if (genre.equals(COOKING)) {
-           cookBooks.add(bk);
-       }
+        if (genre.equals(REFERENCE)) {
+            referenceBooks.add(bk);
+        } else if (genre.equals(NONFICTION)) {
+            nonfictionBooks.add(bk);
+        } else if (genre.equals(FICTION)) {
+            fictionBooks.add(bk);
+        } else if (genre.equals(TEXTBOOK)) {
+            textBooks.add(bk);
+        } else if (genre.equals(COOKING)) {
+            cookBooks.add(bk);
+        }
     }
 
     // REQUIRES: bk != null

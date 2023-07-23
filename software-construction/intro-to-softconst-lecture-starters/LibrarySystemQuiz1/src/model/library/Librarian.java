@@ -10,11 +10,11 @@ public class Librarian {
     private Book favBook;
 
     public Librarian(String name, int age, Library lib, Book bk) {
-       this.name = name;
-       this.age = age;
-       managingLibrary = lib;
-       lib.hireLibrarian(this);
-       favBook = bk;
+        this.name = name;
+        this.age = age;
+        managingLibrary = lib;
+        lib.hireLibrarian(this);
+        favBook = bk;
     }
 
     // getters
