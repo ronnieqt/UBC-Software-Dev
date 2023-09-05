@@ -2,9 +2,17 @@ package ui;
 
 import model.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SelfDrivingCar {
+
+    private List<Wheel> wheels = new ArrayList<>();
+    private List<Brake> brakes = new ArrayList<>();
+    private SpeedRegulator speedRegulator;
+    private Engine engine;
+    private Speedometer speedometer;
+    private FrontSensor frontSensor;
 
     public SelfDrivingCar(int numSecondsToTest) {
         setup();
@@ -35,7 +43,9 @@ public class SelfDrivingCar {
     public Speedometer getSpeedometer() { return speedometer; }
     public List<Wheel> getWheels() { return wheels; }
 
-    public static void main(String[] args) { SelfDrivingCar car = new SelfDrivingCar(10); }
-
+    public static void main(String[] args)
+    {
+        SelfDrivingCar car = new SelfDrivingCar(10);
+    }
 
 }
