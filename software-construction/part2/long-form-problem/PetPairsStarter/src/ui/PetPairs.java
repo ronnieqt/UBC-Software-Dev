@@ -8,7 +8,13 @@ import model.pets.Dog;
 import model.pets.Parrot;
 import model.pets.Pet;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class PetPairs {
+
+    private List<Pet> animals = new LinkedList<>();
+    private List<Human> people = new LinkedList<>();
 
     public PetPairs() {
         Cat cat = new Cat("calico", false, true, 55.00);
@@ -46,6 +52,8 @@ public class PetPairs {
 
         int result = sally.numPetsOfSpecies("dog");
         System.out.println("Sally has " + result + " dog(s)");
+
+        store.displayAllPetsWithAttributes(true, false, 50.0);
     }
 
 }

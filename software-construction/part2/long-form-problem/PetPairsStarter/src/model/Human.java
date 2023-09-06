@@ -2,10 +2,14 @@ package model;
 
 import model.pets.Pet;
 
+import java.util.HashSet;
+import java.util.Set;
+
 
 public class Human {
     private String name;
     private double spendibees;
+    private Set<Pet> pets = new HashSet<Pet>();
 
     public Human(String name) {
         this.name = name;
@@ -61,8 +65,13 @@ public class Human {
 
     //EFFECTS: returns the number of pets belonging to species
     public int numPetsOfSpecies(String species) {
-        //TODO 6
-        return 0;
+        int count = 0;
+        for (Pet pet : pets) {
+            if (pet.getSpecies().equals(species)) {
+                count += 1;
+            }
+        }
+        return count;
     }
 
 }
