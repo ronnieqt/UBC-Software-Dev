@@ -3,16 +3,25 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Employee {
+/*
+ * NOTE:
+ * The Employee class currently contains responsibilities
+ * related to both table service and kitchen tasks.
+ *
+ * Safe refactoring includes avoiding deletion until
+ * those methods are no longer being used by other classes.
+ */
+public class Server {  // previous name: Employee
 
     private static final double DISH_PRICE = 10.00;
-    private static final String PREFIX = "EMPLOYEE - ";
+    private static final String PREFIX = "Server - ";
+    // private static final String PREFIX = "EMPLOYEE - ";
 
     private List<Order> orders;
     private double cash;
     private int currentOrderNumber;
 
-    public Employee() {
+    public Server() {
         this.orders = new ArrayList<>();
         currentOrderNumber = 100;
     }
@@ -64,6 +73,7 @@ public class Employee {
         order.print();
     }
 
+    /*
     //MODIFIES: this, order
     //EFFECTS: makes food and logs order as prepared
     public void makeDish(Order order) {
@@ -101,5 +111,6 @@ public class Employee {
         System.out.print(PREFIX + "Plated order: ");
         order.print();
     }
+    */
 
 }
