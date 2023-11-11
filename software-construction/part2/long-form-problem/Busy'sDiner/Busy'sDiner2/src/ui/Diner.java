@@ -3,11 +3,16 @@ package ui;
 import model.Chef;
 import model.Server;
 import model.Order;
+import model.Dish;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Diner {
 
     public static void main(String[] args) {
-        Server server = new Server();
+        Dish dish = generateTurkeyClubSandwich();
+        Server server = new Server(dish);
         Chef chef = new Chef();
 
         for (int i=0; i < 2 ; i++) {
@@ -36,4 +41,21 @@ public class Diner {
             s.takePayment(o);
     }
 
+    private static Dish generateTurkeyClubSandwich() {
+        List<String> ingredients = new ArrayList<>();
+        ingredients.add("avocado");
+        ingredients.add("sriracha");
+        ingredients.add("cheddar cheese");
+        ingredients.add("bread");
+        ingredients.add("lettuce");
+        ingredients.add("tomato");
+        ingredients.add("turkey");
+        ingredients.add("bacon");
+        return new Dish(
+                "Turkey club sandwich",
+                "\"Our trendy sandwich has avocado, sriracha sauce, cheese, veggies, turkey and bacon.\"",
+                ingredients,
+                "\t1. Pour sriracha\n\t2. Spread avocado\n\t3. Stack meat\n\t4. Place veggies"
+        );
+    }
 }
