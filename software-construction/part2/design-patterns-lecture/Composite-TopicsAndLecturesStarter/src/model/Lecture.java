@@ -1,8 +1,8 @@
 package model;
 
 
-public class Lecture {
-
+public class Lecture extends Module
+{
     private String name;
 
     public Lecture(String s) {

@@ -1,23 +1,26 @@
 package model;
 
-public class Topic {
+import java.util.ArrayList;
+import java.util.List;
 
+public class Topic extends Module
+{
+    private List<Module> modules = new ArrayList<>();
     private String name;
 
     public Topic (String name) {
         this.name = name;
     }
 
-    public void addTopic(Topic t) {
-
-    }
-
-    public void addLecture(Lecture lecture) {
-
+    public void addModule(Module m) {
+        modules.add(m);
     }
 
     public void display(String indentLevel) {
-
+        System.out.println(indentLevel + name);
+        for (Module m : modules) {
+            m.display(indentLevel + indentLevel);
+        }
     }
 
 

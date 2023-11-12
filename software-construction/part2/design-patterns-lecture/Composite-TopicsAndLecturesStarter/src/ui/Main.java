@@ -11,10 +11,10 @@ public class Main {
         Topic composite = new Topic("Composite");
         Lecture patternsIntro = new Lecture("Intro to Patterns");
         Lecture observerIntro = new Lecture("Intro to Observer");
-        designPatterns.addTopic(observer);
-        designPatterns.addTopic(composite);
-        designPatterns.addLecture(patternsIntro);
-        observer.addLecture(observerIntro);
+        designPatterns.addModule(observer);
+        designPatterns.addModule(composite);
+        designPatterns.addModule(patternsIntro);
+        observer.addModule(observerIntro);
         designPatterns.display("  ");
     }
 

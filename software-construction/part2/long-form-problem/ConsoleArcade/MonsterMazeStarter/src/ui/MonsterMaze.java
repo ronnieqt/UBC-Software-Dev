@@ -37,7 +37,7 @@ public class MonsterMaze {
 
         r6.addTreasure(t1);
 
-        Game g = new Game(r1);
+        RefactoredGame g = new RefactoredGame(r1);
     }
 
 
