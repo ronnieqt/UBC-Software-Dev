@@ -151,4 +151,14 @@ public class Shape {
     private int coordToNote(int y) {
         return 70 - y / 12;
     }
+
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "x=" + x +
+                ", y=" + y +
+                ", width=" + width +
+                ", height=" + height +
+                '}';
+    }
 }

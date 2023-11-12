@@ -2,6 +2,7 @@ package ui.tools;
 
 
 import model.Shape;
+import observer.SongSaver;
 import players.ShapePlayer;
 import ui.DrawingEditor;
 
@@ -13,8 +14,10 @@ import java.awt.event.MouseEvent;
 
 public class PlayShapeTool extends Tool {
 
-	public PlayShapeTool(DrawingEditor editor, JComponent parent) {
+	public PlayShapeTool(DrawingEditor editor, JComponent parent)
+    {
 		super(editor, parent);
+        addObserver(new SongSaver());
 	}
 
     // EFFECTS: selects the figure containing point of mouse press
@@ -43,7 +46,9 @@ public class PlayShapeTool extends Tool {
     // EFFECTS: creates a ShapePlayer playing the current shape and starts it playing
     private void playShapeAt(Point p) {
         Shape shape = editor.getShapeInDrawing(p);
-        if (shape != null){
+        if (shape != null) {
+            setChanged();
+            notifyObservers(shape);
             final Timer t = new Timer(2, null);
             ActionListener a = new ShapePlayer(editor.getCurrentDrawing(), shape, t);
             t.addActionListener(a);

@@ -5,9 +5,10 @@ import ui.DrawingEditor;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
+import java.util.Observable;
 
 
-public abstract class Tool {
+public abstract class Tool extends Observable {
 
 	protected JButton button;
 	protected DrawingEditor editor;
